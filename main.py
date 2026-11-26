@@ -35,6 +35,10 @@ def validate(word):
         problems.append("word must not be only white space")
     if len(word.split()) != 1:
         problems.append("entry must be exactly one word")
+    if word != word.strip():
+        problems.append("word must not have leading or trailing spaces")
+    if not word.isalpha():
+        problems.append("word must contain only letters")
     return problems
 
 
